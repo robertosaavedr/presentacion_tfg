@@ -1,0 +1,407 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>¿Puede una máquina leer los labios?</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="estilos.css">
+		<link rel="icon" href="img/voice-recognition.png">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-video="https://s3.eu-west-1.amazonaws.com/eu-west-1.vimeo.com/videos/638/333/638333074.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZRUUNWVAWWO32QM7%2F20220609%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220609T073151Z&X-Amz-Expires=173369&X-Amz-SignedHeaders=host&X-Amz-Signature=c237e3c4628633737ed0b17db58e3bda9688467b845c40457fc9e0e13cc476eb" data-background-video-loop> 
+					<h2>¿Puede una máquina leer los labios?</h2>
+					<h5>Trabajo de Fin de Grado</h5>
+					<p>
+						<small>Roberto Carlos Saavedra Baylón</small>
+					</p>
+				</section>
+				
+				<section>
+					<ol>
+						<li>Introducción</li>
+						<li>Estado del Arte</li>
+						<li>Sistemas Tradicionales</li>
+						<li>Deep Learning</li>
+						<li>Conclusiones</li>
+					</ol>
+			    </section>
+
+				<section>
+					<section> 
+						<img src="img/color_001.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_002.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_003.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_004.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_005.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_006.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_007.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_008.jpg" style="width: 25%;" class="fragment">
+						<img src="img/color_009.jpg" style="width: 25%;" class="fragment"> 
+					</section>
+					
+					<section>
+						<figure style="display:flex">
+							<div style="float: left;" class="fragment"><img src="img/mnist.png"></div>
+							<div style="float: right;" class="fragment"><img src="img/mnist_2.png"></div>
+						</figure> 	
+					</section>
+
+					<section>
+						<img src="img/bloques.png"> 	
+					</section>
+
+					<section>
+						<div style="font-size: 20px;">
+							\[\begin{aligned}
+							WRR=\frac{\#PALABRAS\ RECONOCIDAS\ CORRECTAMENTE}{\#PALABRAS\ TOTALES}
+							\end{aligned} \]
+						</div>	
+					</section>
+
+					<section>
+						<table style="font-size: 30px;">
+							<thead><tr>
+								<th>ID</th>
+								<th>Palabras</th>
+								<th>ID</th>
+								<th>Frases</th>
+							</tr></thead>
+							<tbody><tr>
+								<td>1</td>
+								<td>Begin</td>
+								<td>1</td>
+								<td>Stop Navigation</td>
+							</tr></thead>
+							<tbody><tr>
+								<td>2</td>
+								<td>Choose</td>
+								<td>2</td>
+								<td>Excuse me</td>
+							</tr></thead>
+							<tbody><tr>
+								<td>3</td>
+								<td>Connection</td>
+								<td>3</td>
+								<td>I am sorry</td>
+							</tr></thead>
+							<tbody><tr>
+								<td>4</td>
+								<td>Navigation</td>
+								<td>4</td>
+								<td>Thank you</td>
+							</tr></thead>
+							<tbody><tr>
+								<td>5</td>
+								<td>Next</td>
+								<td>5</td>
+								<td>Good bye</td>
+							</tr></thead>
+							<tbody><tr>
+								<td>6</td>
+								<td>Previous</td>
+								<td>6</td>
+								<td>I love this game</td>
+							</tr><tbody><tr>
+								<td>7</td>
+								<td>Start</td>
+								<td>7</td>
+								<td>Nice to meet you</td>
+							</tr><tbody><tr>
+								<td>8</td>
+								<td>Stop</td>
+								<td>8</td>
+								<td>You are welcome</td>
+							</tr><tbody><tr>
+								<td>9</td>
+								<td>Hello</td>
+								<td>9</td>
+								<td>How are you?</td>
+							</tr><tbody><tr>
+								<td>10</td>
+								<td>Web</td>
+								<td>10</td>
+								<td>Have a good time</td>
+							</tr>
+							
+						</table>	
+					</section>
+
+
+
+				</section>
+				<!--estado del arte-->
+				<section data-background-color="white">
+					<section>Estado del Arte</section>
+
+					<section> <img src="img/datasets.png"> </section>
+
+					<section> <img src="img/faces.png"> </section>
+
+					<section> <img src="img/lecture.png"> </section>
+
+					<section> <img src="img/liopa.png"> </section>
+					
+				</section>
+
+				<!--sistemas tradicionales-->
+				<section data-background-color="white">
+					<section>Sistemas Tradicionales</section>
+					
+					<section>
+						<figure>
+							<img src="img/presentacion.jpg" style="width: 8cm;" class="fragment">
+							<img src="img/cara.png" style="width: 8cm;" class="fragment">  <br/>
+							<img src="img/landmarks.png" style="width: 8cm;" class="fragment">
+							<img src="img/lips.png" style="width: 8cm;" class="fragment">
+						</figure> 	
+					</section>
+
+					<section>
+						<img src="img/boca.png" style="width: 4cm;">
+						<img src="img/boca2.png" style="width: 4cm;">
+					</section>
+
+					<section>
+						Análisis de Componentes Principales
+						<img src="img/pca.png" style="width: 50%;">
+					</section>
+
+
+
+					<section>
+						<img src="img/scree2.png">
+					</section>
+
+					<section><img src="img/eigenlips.png"></section>
+					
+					<section><img src="img/eigenfaces.png"></section>
+
+
+					<section>Máquina de Soporte Vectorial</section>
+
+					<section> 
+							<img src="img/svm1.png" style="width: 25%;" class="fragment">
+							<img src="img/svm2.png" style="width: 25%;" class="fragment">
+					</section>
+
+					<section>
+					<div class="fragment">
+						<table class="default">
+
+							<tr>
+						  
+							  <td> </td>
+						  
+							  <td>Palabras</td>
+
+							  <td>Frases</td>
+												  
+							</tr>
+						  
+							<tr>
+						  
+							  <td>Entrenamiento</td>
+						  
+							  <td>99.58%</td>
+
+							  <td>100%</td>
+						  
+							</tr>
+
+							<tr>
+						  
+								<td>Validación</td>
+						  
+								<td>61%</td>
+  
+								<td>58%</td>
+							
+							</tr>
+
+							<tr>
+						  
+								<td>test</td>
+						  
+								<td>34%</td>
+  
+								<td>41%</td>
+							
+							</tr>
+						  
+						  </table>	
+					</div>
+					</section>
+
+					<section>Modelo Oculto de Markov</section>
+
+					<section data-background-color="white">
+						<img src="img/hmm.png">
+					</section>
+
+					<section>
+						<div class="fragment">
+							<table class="default">
+	
+								<tr>
+							  
+								  <td> </td>
+							  
+								  <td>Palabras</td>
+	
+								  <td>Frases</td>
+													  
+								</tr>
+							  
+								<tr>
+							  
+								  <td>Entrenamiento</td>
+							  
+								  <td>41%</td>
+	
+								  <td>34%</td>
+							  
+								</tr>
+	
+								<tr>
+							  
+									<td>Validación</td>
+							  
+									<td>20%</td>
+	  
+									<td>10%</td>
+								
+								</tr>
+	
+								<tr>
+							  
+									<td>test</td>
+							  
+									<td>16%</td>
+	  
+									<td>22%</td>
+								
+								</tr>
+							  
+							  </table>	
+						</div>
+						</section>
+				</section>
+
+				<!--Deep Learning-->
+				<section data-background-color="white">
+					<section>Deep Learning</section>
+
+					<section>
+						<img src="img/nn.png">
+					</section>
+
+					<section>
+						<img src="img/cnn.png">
+					</section>
+
+					<section>
+						<img src="img/filter2.png">
+						<img src="img/filter3.png">
+					</section>
+
+					<section>
+						<img src="img/pooling.png">
+					</section>
+
+					<section>
+						<img src="img/rnn.png">
+					</section>
+
+					<section>
+						<img src="img/3d_conv.png">
+					</section>	
+
+					<section>
+						<img src="img/bloques_neural.png">
+					</section>
+
+					<section>
+						<table class="default">
+
+							<tr>
+						  
+							  <td> </td>
+						  
+							  <td>Palabras</td>
+
+							  <td>Frases</td>
+												  
+							</tr>
+						  
+							<tr>
+						  
+							  <td>Entrenamiento</td>
+						  
+							  <td>86%</td>
+
+							  <td>71%</td>
+						  
+							</tr>
+
+							<tr>
+						  
+								<td>Validación</td>
+						  
+								<td>40%</td>
+  
+								<td>42%</td>
+							
+							</tr>
+
+							<tr>
+						  
+								<td>test</td>
+						  
+								<td>45%</td>
+  
+								<td>30%</td>
+							
+							</tr>
+						  
+						  </table>	
+					</section>
+				</section>
+
+				<!--Conclusiones-->
+				<section>
+					<section>Conclusiones</section>
+				</section>
+				
+				
+				
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+			});
+		</script>
+	</body>
+</html>
